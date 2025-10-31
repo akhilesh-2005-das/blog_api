@@ -1,18 +1,180 @@
-Full-Stack MERN Blog Project: Retro-Board 🚀This is a complete full-stack blog application named Retro-Board, built with the MERN stack (MongoDB, Express, React, Node.js). It was created as a minor project for a full-stack development class.The application features a secure RESTful API backend that handles user authentication with JWT and manages blog post data. The frontend is a modern, responsive Single Page Application (SPA) built with React and Vite, allowing users to register, log in, and perform full CRUD (Create, Read, Update, Delete) operations on their own posts.🌐 Live Links & Test CredentialsYou can test the fully deployed application right now!Live Frontend: https://frontend-blog-api.onrender.com/Live Backend API: https://backend-blog-api-iktj.onrender.com/🧪 Try it out!Feel free to register as a new user or use these test credentials to log in:Email: local@example.comPassword: 12345✨ Key FeaturesSecure User Authentication: Full registration and login system.Password Hashing: Passwords are never stored in plain text, using bcryptjs for one-way hashing.JWT Authorization: The API is secured using JSON Web Tokens. Protected routes require a valid token.Full CRUD for Posts:Create: Logged-in users can create new blog posts.Read: All users (guests included) can read all posts.Update: Users can only edit their own posts.Delete: Users can only delete their own posts.Author-Only Permissions: The backend validates that the user making an edit/delete request is the original author.Responsive Frontend: The React UI, built with Tailwind CSS, is fully responsive.Global State Management: Uses React's Context API to manage the user's authentication state.🛠️ Tech StackCategoryTechnologyDescriptionFrontendReact (Vite)JavaScript library for building user interfaces.React RouterFor client-side routing and page navigation.Tailwind CSSA utility-first CSS framework for styling.AxiosFor making HTTP requests to the backend API.React Context APIFor managing global authentication state.BackendNode.jsJavaScript runtime environment.Express.jsWeb framework for building the RESTful API.MongoDBNoSQL database for storing user and post data.MongooseODM library for modeling data in MongoDB.JWT (jsonwebtoken)For creating and verifying user auth tokens.bcryptjsFor hashing and comparing passwords.DeploymentRender.comCloud platform for deploying the backend & frontend.🏁 Getting Started (Local Development)To get a local copy up and running, follow these steps.PrerequisitesNode.js (which includes npm)A MongoDB Atlas account (or a local MongoDB instance)Postman (Recommended for testing the API)1. Backend Setup (/server folder)Clone the repository:git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+
+# 🎮 Retro-Board | Full-Stack MERN Blog Project 🚀
+
+**Retro-Board** is a complete full-stack blog application built with the **MERN stack (MongoDB, Express, React, Node.js)**.  
+It was developed as a **minor project** for a full-stack development class.
+
+The application features a **secure RESTful API backend** for authentication and blog management, paired with a **modern, responsive frontend** built using **React (Vite)** and **Tailwind CSS**.  
+
+Users can **register**, **log in**, and perform **full CRUD (Create, Read, Update, Delete)** operations on their own posts.
+
+---
+
+## 🌐 Live Links & Test Credentials
+
+### 🔗 Live Demo  
+**Frontend:** [https://frontend-blog-api.onrender.com/](https://frontend-blog-api.onrender.com/)  
+**Backend API:** [https://backend-blog-api-iktj.onrender.com/](https://backend-blog-api-iktj.onrender.com/)
+
+### 🧪 Test Credentials
+You can log in with:
+```
+
+Email: [local@example.com](mailto:local@example.com)
+Password: 12345
+
+````
+
+Or create your own account!
+
+---
+
+## ✨ Key Features
+
+- 🔒 **Secure User Authentication** – Full registration & login system  
+- 🧂 **Password Hashing** – Uses bcryptjs for one-way encryption  
+- 🪪 **JWT Authorization** – Protects routes and validates users  
+- ✍️ **Full CRUD for Posts**  
+  - **Create:** Logged-in users can create new blog posts  
+  - **Read:** Anyone can read all posts  
+  - **Update:** Only the post’s author can edit  
+  - **Delete:** Only the post’s author can delete  
+- 🧠 **Global State Management** – React Context API for user auth state  
+- 📱 **Responsive Design** – Built with Tailwind CSS  
+- 🧍 **Author-Only Permissions** – Enforced at backend level  
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology | Description |
+|-----------|-------------|-------------|
+| **Frontend** | React (Vite) | JavaScript library for building UIs |
+|  | React Router | Client-side routing |
+|  | Tailwind CSS | Utility-first CSS framework |
+|  | Axios | For HTTP requests |
+|  | React Context API | Global state management |
+| **Backend** | Node.js | JS runtime environment |
+|  | Express.js | RESTful API framework |
+|  | MongoDB | NoSQL database |
+|  | Mongoose | ODM for MongoDB |
+|  | JWT (jsonwebtoken) | Token-based authentication |
+|  | bcryptjs | Password hashing |
+| **Deployment** | Render.com | Cloud hosting for frontend & backend |
+
+---
+
+## 🏁 Getting Started (Local Development)
+
+Follow these steps to run the project locally 👇
+
+### ✅ Prerequisites
+- [Node.js](https://nodejs.org/) (includes npm)
+- [MongoDB Atlas](https://www.mongodb.com/atlas) account or local MongoDB
+- [Postman](https://www.postman.com/) *(optional for API testing)*
+
+---
+
+### 1️⃣ Backend Setup (`/server` folder)
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name/server
-Install dependencies:npm install
-Create your environment file:Create a file named .env in the /server directory and add the following variables:# Your MongoDB connection string
+
+# Install dependencies
+npm install
+````
+
+Create a `.env` file inside `/server`:
+
+```env
 MONGO_URI=your_mongodb_connection_string_here
-
-# A strong, random secret for signing tokens
 JWT_SECRET=your_super_strong_secret_key_here
-
-# Port for the server to run on
 PORT=5000
-Run the server:# Runs the server with nodemon (auto-restarts on changes)
+```
+
+Run the backend:
+
+```bash
+# Start server with nodemon
 npm run dev
-The backend API will now be running on http://localhost:5000.2. Frontend Setup (/client folder)Open a new terminal and navigate to the client directory:cd ../client
-Install dependencies:npm install
-Set API URL:Go to client/src/api/api.js (or your equivalent Axios config file) and change the baseURL to your local backend:baseURL: 'http://localhost:5000/api',Run the client:# Starts the Vite development server
+```
+
+Your backend API will be running at 👉 **[http://localhost:5000](http://localhost:5000)**
+
+---
+
+### 2️⃣ Frontend Setup (`/client` folder)
+
+```bash
+# Open a new terminal
+cd ../client
+
+# Install dependencies
+npm install
+```
+
+In your Axios config file (`client/src/api/api.js`), set:
+
+```js
+baseURL: 'http://localhost:5000/api'
+```
+
+Run the frontend:
+
+```bash
 npm run dev
-Your React app will open in your browser, typically at http://localhost:5173.📖 API EndpointsAll endpoints are prefixed with /api.Auth RoutesMethodEndpointDescriptionPOST/auth/registerRegister a new user.POST/auth/loginLog in a user and receive a JWT.Post RoutesMethodEndpointDescriptionAccessGET/postsGet all blog posts.PublicPOST/postsCreate a new blog post.PrivatePUT/posts/:idUpdate a specific post.Private (Author only)DELETE/posts/:idDelete a specific post.Private (Author only)
+```
+
+Your React app will open at 👉 **[http://localhost:5173](http://localhost:5173)**
+
+---
+
+## 📖 API Endpoints
+
+All routes are prefixed with `/api`.
+
+### 🔐 Auth Routes
+
+| Method | Endpoint         | Description              |
+| ------ | ---------------- | ------------------------ |
+| POST   | `/auth/register` | Register a new user      |
+| POST   | `/auth/login`    | Log in and receive a JWT |
+
+### 📝 Post Routes
+
+| Method | Endpoint     | Access                | Description        |
+| ------ | ------------ | --------------------- | ------------------ |
+| GET    | `/posts`     | Public                | Get all blog posts |
+| POST   | `/posts`     | Private               | Create a new post  |
+| PUT    | `/posts/:id` | Private (Author only) | Update a post      |
+| DELETE | `/posts/:id` | Private (Author only) | Delete a post      |
+
+---
+
+## 💾 Deployment
+
+The app is deployed on **Render.com** for both the frontend and backend.
+You can fork the repository and connect it to your own Render account for free deployment.
+
+---
+
+## 💡 Future Enhancements
+
+* 🗂️ Add post categories & tags
+* 💬 Comment system
+* 🖼️ Image upload support
+* 🔍 Search & filter posts
+
+---
+
+## 🧑‍💻 Author
+
+**Akhilesh Kumar**
+📧 *Feel free to reach out for collaboration or feedback!*
+
+---
+
+
+
