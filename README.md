@@ -20,7 +20,7 @@ Users can **register**, **log in**, and perform **full CRUD (Create, Read, Updat
 You can log in with:
 ```
 
-Email: [local@example.com](mailto:local@example.com)
+Email: local@example.com
 Password: 12345
 
 ````
